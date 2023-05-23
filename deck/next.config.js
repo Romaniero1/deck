@@ -1,4 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /.webm$/,
+      use: {
+        loader: "file-loader",
+        options: {
+          publicPath: "/images/",
+          outputPath: "public/images/",
+          name: "[name].[ext]",
+        },
+      },
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;
