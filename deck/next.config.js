@@ -2,7 +2,7 @@
 const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
-      test: /.webm$/,
+      test: /.(gif|node|webm)$/i,
       use: {
         loader: "file-loader",
         options: {
@@ -12,7 +12,7 @@ const nextConfig = {
         },
       },
     });
-
+    
     return config;
   },
 };

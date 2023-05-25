@@ -1,9 +1,8 @@
-//import { usePageAuthGuard } from 'hooks/usePageAuthGuard';
 import Head from 'next/head';
 import { SecondFlow } from '../../components/second-page';
 
 export default function Deck() {
-	//usePageAuthGuard();
+
 
 	return (
 		<div className='text-white overflow-x-hidden'>

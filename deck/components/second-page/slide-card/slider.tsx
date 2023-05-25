@@ -1,4 +1,5 @@
-/* import { Slide } from 'react-slideshow-image';
+import { Slide } from 'react-slideshow-image';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { Worker } from '@react-pdf-viewer/core';
@@ -24,14 +25,10 @@ import Picture13 from '/public/second-flow/slider/13.jpg';
 import Picture14 from '/public/second-flow/slider/14.jpg';
 import Picture15 from '/public/second-flow/slider/15.jpg';
 import Picture16 from '/public/second-flow/slider/16.jpg';
-import Picture17 from '/public/second-flow/slider/17.jpg';
-import Picture18 from '/public/second-flow/slider/18.jpg';
-import Picture19 from '/public/second-flow/slider/19.jpg';
-import Picture20 from '/public/second-flow/slider/20.jpg';
 
 export const Slider = () => {
 	const slideImages = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7, Picture8, Picture9, Picture10,
-		Picture11, Picture12, Picture13, Picture14, Picture15, Picture16, Picture17, Picture18, Picture19, Picture20,
+		Picture11, Picture12, Picture13, Picture14, Picture15, Picture16
 	];
 	const buttonStyle = {
 		width: "15px",
@@ -42,7 +39,7 @@ export const Slider = () => {
 	};
 	const properties = {
 		duration: 3500,
-		autoplay: true,
+		autoplay: false,
 		transitionDuration: 1200,
 		arrows: true,
 		infinite: true,
@@ -53,17 +50,17 @@ export const Slider = () => {
 	const closeModal = () => setOpen(false);
 	const [open, setOpen] = useState(false);
 
-    const zoomPluginInstance = zoomPlugin();
-    const { ZoomInButton, ZoomOutButton, ZoomPopover } = zoomPluginInstance;
-    const getFilePluginInstance = getFilePlugin();
-    const { DownloadButton } = getFilePluginInstance;
+	const zoomPluginInstance = zoomPlugin();
+	const { ZoomInButton, ZoomOutButton, ZoomPopover } = zoomPluginInstance;
+	const getFilePluginInstance = getFilePlugin();
+	const { DownloadButton } = getFilePluginInstance;
 
 	return (
-		<div className='w-[272px] h-[180px] sm:w-[576px] sm:h-[360px] lg:h-[320px] md:w-[704px] lg:w-[580px] xl:w-[740px] xl:h-[420px] rounded-[24px}'>
+		<div className='w-[790px] h-[520px] rounded-[24px} '>
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
 					<button key={index} className="each-slide" onClick={() => setOpen(o => !o)}>
-						<Image src={each} width={740} height={420} alt="sample" className='rounded-[24px] lazy' />
+						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] border-light lazy' />
 					</button>
 				))}
 			</Slide>
@@ -71,7 +68,7 @@ export const Slider = () => {
 				<>
 					<div className="flex flex-col fixed  inset-0 z-10 bg-black bg-opacity-80 justify-center items-center" onClick={closeModal} />
 					<div className="flex flex-col fixed top-[10%] z-30 left-[10%] w-[80%] h-[75%] bg-black bg-opacity-80 justify-center items-center">
-						<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.js">
+						<Worker workerUrl="https://unpkg.com/pdfjs-dist@3.6.172/build/pdf.worker.min.js">
 							<div
 								className="rpv-core__viewer"
 								style={{
@@ -104,7 +101,7 @@ export const Slider = () => {
 										overflow: 'hidden',
 									}}
 								>
-									<Viewer fileUrl="TVS_Deck.pdf" defaultScale={SpecialZoomLevel.PageFit} plugins={[zoomPluginInstance,getFilePluginInstance]} theme="dark" />
+									<Viewer fileUrl="Deck.pdf" defaultScale={SpecialZoomLevel.PageFit} plugins={[zoomPluginInstance, getFilePluginInstance]} theme="dark" />
 								</div>
 							</div>
 						</Worker>
@@ -113,57 +110,4 @@ export const Slider = () => {
 			}
 		</div>
 	)
-} */
-
-import React, { useState, useEffect } from 'react';
-import pdfjs from 'pdfjs-dist';
-
-interface SliderProps {
-  pdfUrl: string;
 }
-
-export const Slider: React.FC<SliderProps> = ({ pdfUrl }) => {
-  const [pdf, setPdf] = useState<any>(null);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
-  useEffect(() => {
-    pdfjs.getDocument(pdfUrl).promise.then((pdf: any) => {
-      setPdf(pdf);
-    });
-  }, [pdfUrl]);
-
-  const nextPage = () => {
-    if (pdf && currentPage < pdf.numPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (pdf && currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  return (
-    <div className="relative">
-      {pdf && (
-        <div className="flex items-center justify-center">
-          <div className="w-full max-w-2xl">
-            <div className="relative">
-              <div className="absolute top-0 left-0 w-full h-full">
-                <canvas id="pdf-canvas"></canvas>
-              </div>
-              <div className="absolute bottom-0 left-0 w-full bg-gray-900 text-white p-2">
-                Page {currentPage} of {pdf.numPages}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      <div className="absolute top-0 bottom-0 left-0 w-1/2 bg-gray-900 opacity-50 cursor-pointer" onClick={prevPage}></div>
-      <div className="absolute top-0 bottom-0 right-0 w-1/2 bg-gray-900 opacity-50 cursor-pointer" onClick={nextPage}></div>
-    </div>
-  );
-};
-
-export default Slider;
