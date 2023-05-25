@@ -6,8 +6,8 @@ export default function Home() {
 	return (
 		<div className='text-white'>
 			<Head>
-				<title>Tinyverse Studios</title>
-				<meta name='description' content='Tinyverse Studios' />
+				<title>Vittaverse</title>
+				<meta name='description' content='Vittaverse' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Toaster position='bottom-right' />

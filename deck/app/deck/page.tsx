@@ -7,8 +7,8 @@ export default function Deck() {
 	return (
 		<div className='text-white overflow-x-hidden'>
 			<Head>
-				<title>Tinyverse Studios</title>
-				<meta name='description' content='Tinyverse Studios' />
+				<title>Vittaverse</title>
+				<meta name='description' content='Vittaverse' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main>

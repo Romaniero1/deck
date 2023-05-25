@@ -27,7 +27,7 @@ export const PopupContact = () => {
                             layout='fixed'
                             alt='image'
                         />
-                        <a href='mailto:arshia@tinycolony.io'>
+                        <a href='mailto:ash@vittaverse.com'>
                             <h5>ash@vittaverse.com</h5>
                         </a>
                     </div>

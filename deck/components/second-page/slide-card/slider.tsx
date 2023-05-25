@@ -39,7 +39,7 @@ export const Slider = () => {
 	};
 	const properties = {
 		duration: 3500,
-		autoplay: false,
+		autoplay: true,
 		transitionDuration: 1200,
 		arrows: true,
 		infinite: true,
@@ -56,12 +56,12 @@ export const Slider = () => {
 	const { DownloadButton } = getFilePluginInstance;
 
 	return (
-		<div className='w-[790px] h-[520px] rounded-[24px} '>
+		<div className='w-2/3 rounded-[24px} '>
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
-					<button key={index} className="each-slide" onClick={() => setOpen(o => !o)}>
+					<div key={index} className="each-slide" onClick={() => setOpen(o => !o)}>
 						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] border-light lazy' />
-					</button>
+					</div>
 				))}
 			</Slide>
 			{open &&

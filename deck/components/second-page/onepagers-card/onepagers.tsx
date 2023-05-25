@@ -24,9 +24,9 @@ export const Onepagers = () => {
 	};
 
 	return (
-		<div className='flex relative w-[388px] h-[520px] rounded-[24px] border-[1px] border-light pt-5 ml-5 bg-black bg-opacity-50' onClick={() => TVOneP((o) => !o)}>
-			<div className="flex  bg-[url('/second-flow/bg-card/bg.png')] bg-contain bg-no-repeat h-[90%] w-full">
-				<h1 className='absolute bottom-4 left-4'>
+		<div className='flex relative w-1/3 rounded-[24px] border-[1px] border-light pt-5 ml-5 bg-black bg-opacity-50' onClick={() => TVOneP((o) => !o)}>
+			<div className="flex bg-[url('/second-flow/bg-card/bg.png')] bg-contain bg-no-repeat h-[90%] w-full">
+				<h1 className='absolute bottom-3 left-4'>
 					Roadmap
 				</h1>
 				<div
@@ -39,7 +39,7 @@ export const Onepagers = () => {
 						className='flex flex-col fixed inset-0 w-screen h-screen bg-black bg-opacity-80 justify-center items-center'
 						onClick={closeTV}
 					/>
-{/* 					<PrismaZoom ref={refZoom}>
+					{/* 					<PrismaZoom ref={refZoom}>
 						<Image
 							src={Onepager}
 							width={510}

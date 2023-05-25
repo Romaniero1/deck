@@ -57,7 +57,7 @@ export const SecondFlow = () => {
 					</div>
 				</div>
 			</header>
-			<footer className='absolute border-t-[1px] w-screen border-white bottom-5 pt-5 border-opacity-50'>
+			<footer className='absolute border-t-[1px] w-screen border-white bottom-2 pt-2 border-opacity-50'>
 				<div className='flex mx-[120px] justify-between items-end'>
 					<h4>
 						© Vittaverse 2023
