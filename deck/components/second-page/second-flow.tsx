@@ -14,8 +14,10 @@ import { useRouter } from 'next/navigation';
 
 export const SecondFlow = () => {
 	const router = useRouter();
-	const isPasswordCorrect = localStorage.getItem('isPasswordCorrect');
-	isPasswordCorrect === 'true' ? null : router.push('/');
+	if (typeof window !== 'undefined') {
+		const isPasswordCorrect = localStorage.getItem('isPasswordCorrect');
+		isPasswordCorrect === 'true' ? null : router.push('/');
+	}
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const handleOpenPopup = () => {

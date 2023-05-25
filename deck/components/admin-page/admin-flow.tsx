@@ -6,8 +6,10 @@ import { useRouter } from 'next/navigation';
 
 export const AdminFlow = () => {
 	const router = useRouter();
-	const isPasswordCorrect = localStorage.getItem('isPasswordCorrect');
-	isPasswordCorrect === 'true' ? null : router.push('/');
+	if (typeof window !== 'undefined') {
+		const isPasswordCorrect = localStorage.getItem('isPasswordCorrect');
+		isPasswordCorrect === 'true' ? null : router.push('/');
+	}
 	const [pass, setPassword] = useState('');
 	const [firm, setFirm] = useState('');
 	const handlePasswordChange = (event: { target: { value: SetStateAction<string>; }; }) => {
