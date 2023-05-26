@@ -100,7 +100,7 @@ export const FirstFlow = () => {
 
 
 	return (
-		<header className="flex justify-center items-center w-auto h-auto md:w-screen md:h-screen mb-10 sm:mb-10 bg-[#080000]">
+		<header className="flex justify-center items-center w-auto h-auto pb-10 sm:pb-0 bg-[#080000]">
 			<div className='mx-10 flex flex-col items-center'>
 				<video ref={videoRef} className='w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]'muted>
 					<source src={Logo} type="video/webm" />
