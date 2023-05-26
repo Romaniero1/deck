@@ -9,8 +9,8 @@ export const PopupContact = () => {
     return (
         <Popup
             trigger={
-                <button className='w-[184px] h-[48px] ml-5 bg-white rounded-[8px] text-green hover:border-[1px] hover:outline-green'>
-                    <h2>Contact us</h2>
+                <button className='btn-secondary w-full md:w-[184px] h-[48px] mt-2 sm:mt-0 sm:ml-5'>
+                    <h4>Contact us</h4>
                 </button>
             }
             position='bottom center'
@@ -39,7 +39,7 @@ export const PopupContact = () => {
                             layout='fixed'
                             alt='image'
                         />
-                        <a href='https://t.me/metavabi'>
+                        <a href='https://t.me/AshShz'>
                             <h5>@AshShz</h5>
                         </a>
                     </div>

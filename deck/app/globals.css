@@ -1,7 +1,19 @@
+@import "react-slideshow-image/dist/styles.css";
 @tailwind base;
+h3 {
+  @apply text-xl font-sans font-[750];
+}
+h4 {
+  @apply text-lg font-sans font-[750];
+}
+body {
+  @apply text-base font-sans font-[400];
+}
+
 @tailwind components;
 @tailwind utilities;
-@import "react-slideshow-image/dist/styles.css";
+
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,4 +39,42 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.btn-primary {
+  background-color: #1EAA4D;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+.btn-primary:hover {
+  background-color: #1A8E41;
+}
+.btn-primary:active {
+  background-color: #17863C;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #1EAA4D;
+  outline: #1EAA4D;
+  border: 1px solid;
+  border-radius: 8px;
+}
+.btn-secondary:hover {
+  color: #FFFFFF;
+  background-color: #1EAA4D;
+  border: none;
+}
+.btn-secondary:active {
+  color: #FFFFFF;
+  background-color: #1A8E41;
+  border: none;
+}
+
+input:focus {
+  border: 1px solid #101010;
+  outline: none;
+}
+input:disabled {
+  background-color: #FFFFFF;
+  color: #ccc;
+}
 

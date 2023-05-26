@@ -56,7 +56,7 @@ export const Slider = () => {
 	const { DownloadButton } = getFilePluginInstance;
 
 	return (
-		<div className='w-2/3 rounded-[24px} '>
+		<div className='w-full lg:w-2/3 rounded-[24px} '>
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
 					<div key={index} className="each-slide" onClick={() => setOpen(o => !o)}>
@@ -66,7 +66,7 @@ export const Slider = () => {
 			</Slide>
 			{open &&
 				<>
-					<div className="flex flex-col fixed  inset-0 z-10 bg-black bg-opacity-80 justify-center items-center" onClick={closeModal} />
+					<div className="flex flex-col fixed inset-0 z-10 bg-black bg-opacity-80 justify-center items-center" onClick={closeModal} />
 					<div className="flex flex-col fixed top-[10%] z-30 left-[10%] w-[80%] h-[75%] bg-black bg-opacity-80 justify-center items-center">
 						<Worker workerUrl="https://unpkg.com/pdfjs-dist@3.6.172/build/pdf.worker.min.js">
 							<div

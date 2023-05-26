@@ -24,13 +24,13 @@ export const Onepagers = () => {
 	};
 
 	return (
-		<div className='flex relative w-1/3 rounded-[24px] border-[1px] border-light pt-5 ml-5 bg-black bg-opacity-50' onClick={() => TVOneP((o) => !o)}>
-			<div className="flex bg-[url('/second-flow/bg-card/bg.png')] bg-contain bg-no-repeat h-[90%] w-full">
-				<h1 className='absolute bottom-3 left-4'>
+		<div className='flex items-end relative w-full lg:w-1/3 h-[200px] sm:h-[248px] lg:h-auto rounded-[24px] border-[1px] border-light mt-5 lg:mt-0 lg:ml-5 bg-black bg-opacity-50' onClick={() => TVOneP((o) => !o)}>
+			<div className="flex bg-[url('/second-flow/bg-card/bg.png')] bg-contain bg-bottom bg-no-repeat rounded-b-[24px] h-[85%] w-full">
+				<h3 className='absolute top-4 left-4'>
 					Roadmap
-				</h1>
+				</h3>
 				<div
-					className="absolute top-4 right-4 w-10 h-10 bg-cover bg-[url('/second-flow/link_button_ua.svg')] duration-100 hover:rotate-[40deg]"
+					className="absolute top-4 right-4 w-7 h-7 bg-cover bg-[url('/second-flow/link_button_ua.svg')] duration-100 hover:rotate-[40deg]"
 				/>
 			</div>
 			<Popup open={openTVop} closeOnDocumentClick onClose={closeTV}>

@@ -1,7 +1,19 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import localFont from '@next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const roc = localFont({
+  src: [
+    {
+      path: '../public/fonts/Roc-Grotesk-ExtraBold.otf',
+      weight: '750'
+    },
+    {
+      path: '../public/fonts/Roc-Grotesk-Regular.otf',
+      weight: '400'
+    },
+  ],
+  variable: '--font-roc-grotesk'
+})
 
 export const metadata = {
   title: 'Vittaverse',
@@ -15,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${roc.variable} font-sans`}>{children}</body>
     </html>
   )
 }

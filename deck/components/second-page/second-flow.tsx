@@ -29,41 +29,42 @@ export const SecondFlow = () => {
 	};
 	return (
 		<>
-			<header className="">
+			<header>
 				<video ref={videoRef} className='fixed inset-0 w-full h-full object-cover z-[-1]' autoPlay loop muted>
 					<source src={Bg} type="video/webm" />
 				</video>
-				<div className='flex flex-col mx-[120px]'>
-					<div className='flex flex-row items-start justify-between pt-10'>
+				<div className='flex flex-col mx-[17px] sm:mx-[33px] xl:mx-[120px]'>
+					<div className='flex flex-col md:flex-row items-start justify-between pt-10'>
 						<div className='flex w-[240px] md:w-[340px]'>
 							<Image src={Logo} width={200} height={36} alt='Logo' />
 						</div>
-						<div className='flex flex-row'>
+						<div className='flex w-full md:w-auto flex-col sm:flex-row mt-10 md:mt-0'>
 							<a
 								href='https://calendly.com/vittaverse/intro'
 								target='_blank'
 								rel='noopener noreferrer'
+								className='w-full md:w-auto'
 							>
-								<button className='w-[184px] h-[48px] bg-green rounded-[8px] text-white hover:bg-darkGreen'>
-									<h2>Book a meeting</h2>
+								<button className='btn-primary w-full md:w-[184px] h-[48px]'>
+									<h4>Book a meeting</h4>
 								</button>
 							</a>
 							<PopupContact />
 						</div>
 					</div>
-					<div className='mt-[70px] items-center'>
-						<div className='flex justify-center'>
+					<div className='mt-10 md:mt-[70px] items-center'>
+						<div className='flex items-center flex-col lg:flex-row lg:justify-center lg:items-stretch'>
 							<Slider />
 							<Onepagers />
 						</div>
 					</div>
 				</div>
 			</header>
-			<footer className='absolute border-t-[1px] w-screen border-white bottom-2 pt-2 border-opacity-50'>
-				<div className='flex mx-[120px] justify-between items-end'>
-					<h4>
+			<footer className='mt-20 md:mt-[180px] border-t-[1px] w-screen border-white pt-2 border-opacity-50'>
+				<div className='flex mx-[17px] sm:mx-[33px] xl:mx-[120px] justify-between items-end'>
+					<p>
 						© Vittaverse 2023
-					</h4>
+					</p>
 					<button onClick={handleOpenPopup}>
 						Disclaimer
 					</button>

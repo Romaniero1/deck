@@ -22,6 +22,11 @@ export const AdminFlow = () => {
 
 	const onSubmit = async (event: { preventDefault: () => void; }) => {
 		event.preventDefault();
+		if (!pass) {
+			toast.error('Fill in the input field!');
+			return;
+		  }
+		
 		const response = await fetch('https://isuxrpuwprutyqgdlmfh.supabase.co/rest/v1/vittaverse', {
 			method: 'POST',
 			headers: {
@@ -33,7 +38,9 @@ export const AdminFlow = () => {
 			body: JSON.stringify({ firm, pass }),
 		});
 		if (response.ok) {
-			toast.success('Add firm!');
+			toast.success('Company added!');
+			setPassword('');
+			setFirm('');		 
 		} else {
 			toast.error('Error!');
 		}
@@ -60,7 +67,7 @@ export const AdminFlow = () => {
 						type='submit'
 						className='outline outline-0 w-[380px] h-[60px] mt-2 rounded-[8px] bg-green text-white hover:bg-darkGreen'
 					>
-						<h2>Add firm</h2>
+						<h2>Add company</h2>
 					</button>
 				</form>
 			</div>
