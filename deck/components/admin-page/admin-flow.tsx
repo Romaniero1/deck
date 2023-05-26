@@ -54,18 +54,18 @@ export const AdminFlow = () => {
 					<input
 						value={firm}
 						onChange={handleFirmChange}
-						className='w-[380px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
+						className='w-[280px] sm:w-[380px]  h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
 						placeholder='Company name'
 					/>
 					<input
 						value={pass}
 						onChange={handlePasswordChange}
-						className='w-[380px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none mt-2'
+						className='w-[280px] sm:w-[380px]  h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none mt-2'
 						placeholder='Password'
 					/>
 					<button
 						type='submit'
-						className='outline outline-0 w-[380px] h-[60px] mt-2 rounded-[8px] bg-green text-white hover:bg-darkGreen'
+						className='outline outline-0 w-[280px] sm:w-[380px]  h-[60px] mt-2 rounded-[8px] bg-green text-white hover:bg-darkGreen'
 					>
 						<h2>Add company</h2>
 					</button>

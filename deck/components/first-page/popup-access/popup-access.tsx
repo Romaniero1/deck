@@ -19,7 +19,7 @@ export const PopupAccess: React.FC<PopupAccessProps> = ({ onClose }) => {
     };
 
     const token = '6082185552:AAHJMc5-ZnPs1qtkuPg9QLus-WdsfBlHd-w';
-    const chatId = '257380210';
+    const chatId = '5976925822';
     const message = "Request from company - " + firm + ","+ " Company email - " + email;
 
 
@@ -34,8 +34,8 @@ export const PopupAccess: React.FC<PopupAccessProps> = ({ onClose }) => {
 
     return (
         <div className="fixed top-0 left-0 z-10 w-screen h-screen bg-fade bg-opacity-80 flex justify-center items-center" onClick={onClose}>
-            <div className="relative flex z-20 bg-white w-[520px] h-[285px] p-5 rounded-[20px] justify-center items-start" onClick={(e) => e.stopPropagation()}>
-                <div className='flex flex-col w-[328px] text-center'>
+            <div className="relative flex z-20 bg-white w-[290px] sm:w-[520px] h-[285px] p-5 rounded-[20px] justify-center items-start" onClick={(e) => e.stopPropagation()}>
+                <div className='flex flex-col w-[290px] sm:w-[380px] text-center'>
                     <h3 className="text-green mb-2">Request access</h3>
                     <p className="text-grey mb-5">Please leave your company name and email for us to get in touch</p>
                     <form onSubmit={handleSubmit} className="flex flex-col items-center">

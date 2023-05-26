@@ -59,7 +59,7 @@ export const Slider = () => {
 		<div className='w-full lg:w-2/3 rounded-[24px} '>
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
-					<div key={index} className="each-slide" onClick={() => setOpen(o => !o)}>
+					<div key={index} className="each-slide" onClick={() => setOpen(!open)}>
 						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] border-light lazy' />
 					</div>
 				))}

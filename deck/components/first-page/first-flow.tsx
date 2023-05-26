@@ -100,9 +100,9 @@ export const FirstFlow = () => {
 
 
 	return (
-		<header className="flex justify-center items-center w-screen h-screen overflow-hidden bg-[#080000] bg-cover">
-			<div className='mx-10 flex flex-col items-center '>
-				<video ref={videoRef} className='w-[400px] h-[400px]'>
+		<header className="flex justify-center items-center w-screen h-screen bg-[#080000] bg-cover">
+			<div className='mx-10 flex flex-col items-center'>
+				<video ref={videoRef} className='w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]'muted>
 					<source src={Logo} type="video/webm" />
 				</video>
 				{showForm &&
@@ -110,16 +110,16 @@ export const FirstFlow = () => {
 						<input
 							value={password}
 							onChange={handlePasswordChange}
-							className='w-[380px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
+							className='w-[280px] sm:w-[380px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
 							placeholder='Enter password'
 						/>
 						<button
 							type='submit'
-							className='btn-primary outline outline-0 w-[380px] h-[60px] mt-2'
+							className='btn-primary outline outline-0 w-[280px] sm:w-[380px] h-[60px] mt-2'
 						>
 							<h4>Let’s start</h4>
 						</button>
-						<div className='flex pt-5'>
+						<div className='flex flex-col items-center sm:flex-row pt-5'>
 							Don&apos;t have a password?{' '}
 							<div onClick={handleOpenPopup} className='text-green underline ml-1'>
 								Request access
