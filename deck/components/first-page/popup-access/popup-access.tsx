@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 
@@ -11,10 +11,10 @@ interface PopupAccessProps {
 export const PopupAccess: React.FC<PopupAccessProps> = ({ onClose }) => {
     const [firm, setFirm] = useState('');
     const [email, setEmail] = useState('');
-    const handleFirmChange = (event) => {
+    const handleFirmChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setFirm(event.target.value);
     };
-    const handleEmailChange = (event) => {
+    const handleEmailChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setEmail(event.target.value);
     };
 
