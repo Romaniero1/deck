@@ -3,7 +3,6 @@ import { SetStateAction, useState } from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 
-
 interface PopupAccessProps {
     onClose: () => void;
 }
@@ -17,9 +16,8 @@ export const PopupAccess: React.FC<PopupAccessProps> = ({ onClose }) => {
     const handleEmailChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setEmail(event.target.value);
     };
-
-    const token = '6082185552:AAHJMc5-ZnPs1qtkuPg9QLus-WdsfBlHd-w';
-    const chatId = '5976925822';
+	const token = process.env.TELEGRAM_TOKEN;
+	const chatId = process.env.CHATID;
     const message = "Request from company - " + firm + ","+ " Company email - " + email;
 
 

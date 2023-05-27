@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import Logo from '/public/second-flow/logo.svg';
 import { useRef, useState } from 'react';
-//import { MutateResult, useMutateLogin } from 'hooks/useMutateLogin';
 import { PopupContact } from './popup-contact';
 import { Onepagers } from './onepagers-card';
 import { Slider } from './slide-card';
 import Bg from 'public/second-flow/bg.webm';
+import BgSafari from 'public/second-flow/bg.mp4';
 import { PopupDisclaimer } from './popup-disclaimer';
 import { useRouter } from 'next/navigation';
 
@@ -32,6 +32,7 @@ export const SecondFlow = () => {
 			<header>
 				<video ref={videoRef} className='fixed inset-0 w-full h-full object-cover z-[-1]' autoPlay loop muted>
 					<source src={Bg} type="video/webm" />
+					<source src={BgSafari} type="video/mp4" />
 				</video>
 				<div className='flex flex-col mx-[17px] sm:mx-[33px] xl:mx-[120px]'>
 					<div className='flex flex-col md:flex-row items-start justify-between pt-10'>

@@ -1,6 +1,7 @@
 'use client';
 
 import Logo from 'public/first-flow/logo.webm';
+import LogoSafari from 'public/first-flow/logo.mp4';
 import { SetStateAction, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
@@ -36,7 +37,6 @@ export const FirstFlow = () => {
 		if (videoRef.current) {
 			videoRef.current.addEventListener('ended', handleVideoEnd);
 		}
-
 		return () => {
 			if (videoRef.current) {
 				videoRef.current.removeEventListener('ended', handleVideoEnd);
@@ -102,8 +102,9 @@ export const FirstFlow = () => {
 	return (
 		<header className="flex justify-center items-center w-auto pb-10 sm:pb-0 h-screen sm:h-auto lg:h-screen bg-[#080000]">
 			<div className='mx-10 flex flex-col items-center'>
-				<video ref={videoRef} className='w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]'muted>
+				<video ref={videoRef} className='w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]' muted={true}>
 					<source src={Logo} type="video/webm" />
+					<source src={LogoSafari} type="video/mp4"/>
 				</video>
 				{showForm &&
 					<form onSubmit={onSubmit} id='form-submit' className="flex flex-col items-center">

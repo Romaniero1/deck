@@ -1,10 +1,18 @@
 'use client';
 
-import { SetStateAction, useEffect, useRef, useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
+
 export const AdminFlow = () => {
+	const apiKey = process.env.API_KEY;
+	const authToken = process.env.AUTH_TOKEN;
+	const headers = new Headers();
+	headers.set('apikey', apiKey || '');
+	headers.set('Authorization', authToken || '');
+	headers.set('Content-Type', 'application/json');
+	headers.set('Prefer', 'return=minimal');
 	const router = useRouter();
 	if (typeof window !== 'undefined') {
 		const isPasswordCorrect = localStorage.getItem('isPasswordCorrect');
@@ -25,22 +33,17 @@ export const AdminFlow = () => {
 		if (!pass) {
 			toast.error('Fill in the input field!');
 			return;
-		  }
-		
+		}
+
 		const response = await fetch('https://isuxrpuwprutyqgdlmfh.supabase.co/rest/v1/vittaverse', {
 			method: 'POST',
-			headers: {
-				apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdXhycHV3cHJ1dHlxZ2RsbWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ1OTcwNjYsImV4cCI6MjAwMDE3MzA2Nn0.CT4oR_aEysJ6A_rycI5afthMWvFTTRrtRf89uQ9i2Xo',
-				Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdXhycHV3cHJ1dHlxZ2RsbWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ1OTcwNjYsImV4cCI6MjAwMDE3MzA2Nn0.CT4oR_aEysJ6A_rycI5afthMWvFTTRrtRf89uQ9i2Xo',
-				'Content-Type': 'application/json',
-				Prefer: 'return=minimal'
-			},
+			headers: headers,
 			body: JSON.stringify({ firm, pass }),
 		});
 		if (response.ok) {
 			toast.success('Company added!');
 			setPassword('');
-			setFirm('');		 
+			setFirm('');
 		} else {
 			toast.error('Error!');
 		}
