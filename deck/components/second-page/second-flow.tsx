@@ -30,7 +30,7 @@ export const SecondFlow = () => {
 	return (
 		<>
 			<header>
-				<video ref={videoRef} className='fixed inset-0 w-full h-full object-cover z-[-1]' autoPlay loop muted>
+				<video ref={videoRef} className='fixed inset-0 w-full h-full object-cover z-[-1]' playsInline={true} autoPlay loop muted>
 					<source src={Bg} type="video/webm" />
 					<source src={BgSafari} type="video/mp4" />
 				</video>
