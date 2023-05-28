@@ -27,7 +27,7 @@ export const PopupAccess: React.FC<PopupAccessProps> = ({ onClose }) => {
             chat_id: chatId,
             text: message
         });
-        toast.success('Request sent!');
+        toast.success('Request sent');
     }
 
     return (
