@@ -9,6 +9,13 @@ import { PopupAccess } from './popup-access';
 
 
 export const FirstFlow = () => {
+	const apiKey = process.env.API_KEY;
+	const authToken = process.env.AUTH_TOKEN;
+	const headers = new Headers();
+	headers.set('apikey', apiKey || '');
+	headers.set('Authorization', authToken || '');
+	headers.set('Content-Type', 'application/json');
+	headers.set('Prefer', 'return=minimal');
 	const [password, setPassword] = useState('');
 	const router = useRouter();
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -49,12 +56,7 @@ export const FirstFlow = () => {
 		event.preventDefault();
 		const response = await fetch('https://isuxrpuwprutyqgdlmfh.supabase.co/rest/v1/vittaverse?select=pass', {
 			method: 'GET',
-			headers: {
-				apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdXhycHV3cHJ1dHlxZ2RsbWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ1OTcwNjYsImV4cCI6MjAwMDE3MzA2Nn0.CT4oR_aEysJ6A_rycI5afthMWvFTTRrtRf89uQ9i2Xo',
-				Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdXhycHV3cHJ1dHlxZ2RsbWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ1OTcwNjYsImV4cCI6MjAwMDE3MzA2Nn0.CT4oR_aEysJ6A_rycI5afthMWvFTTRrtRf89uQ9i2Xo',
-				'Content-Type': 'application/json',
-				Prefer: 'return=minimal'
-			},
+			headers: headers,
 		});
 
 		if (response.ok) {
@@ -62,12 +64,10 @@ export const FirstFlow = () => {
 			console.log(response);
 			const match = passwords.find((p: { pass: string; }) => p.pass === password);
 			if (match) {
-				console.log('Password matched!');
 				if (match.pass === 'admin') {
 					localStorage.setItem('isPasswordCorrect', 'true');
 					toast.success('Hey Ash!');
 					window.addEventListener('beforeunload', () => {
-						console.log('1 second pause');
 						return null;
 					});
 					setTimeout(() => {
@@ -85,20 +85,23 @@ export const FirstFlow = () => {
 						videoRef.current.play();
 					}
 				}
-
 			} else {
-				console.log('Password not found!');
 				localStorage.setItem('isPasswordCorrect', 'false');
 				toast.error('Invalid password!');
 			}
 		} else {
-			console.log('Error fetching passwords!');
 			localStorage.setItem('isPasswordCorrect', 'false');
 			toast.error('Error fetching passwords!');
 		}
 	};
 
+	useEffect(() => {
+		if (videoRef.current) {
+		  videoRef.current.load();
+		}
+	  }, []);
 
+	  
 	return (
 		<header className="flex justify-center items-center w-auto pb-10 sm:pb-0 h-screen sm:h-auto lg:h-screen bg-[#080000]">
 			<div className='mx-10 flex flex-col items-center'>
