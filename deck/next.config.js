@@ -6,6 +6,7 @@ const nextConfig = {
     AUTH_TOKEN:process.env.AUTH_TOKEN,
     TELEGRAM_TOKEN:process.env.TELEGRAM_TOKEN,
     CHATID:process.env.CHATID,
+    PASS:process.env.PASS,
   },
   webpack: (config) => {
     config.module.rules.push({

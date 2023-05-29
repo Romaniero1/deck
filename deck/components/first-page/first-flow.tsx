@@ -54,7 +54,7 @@ export const FirstFlow = () => {
 
 	const onSubmit = async (event: { preventDefault: () => void; }) => {
 		event.preventDefault();
-		const response = await fetch('https://isuxrpuwprutyqgdlmfh.supabase.co/rest/v1/vittaverse?select=pass', {
+		const response = await fetch('https://uyhpwyrhafadrvtsnwis.supabase.co/rest/v1/Vittaverse?select=pass', {
 			method: 'GET',
 			headers: headers,
 		});
@@ -64,7 +64,7 @@ export const FirstFlow = () => {
 			console.log(response);
 			const match = passwords.find((p: { pass: string; }) => p.pass === password);
 			if (match) {
-				if (match.pass === 'admin') {
+				if (match.pass === process.env.PASS) {
 					localStorage.setItem('isPasswordCorrect', 'true');
 					toast.success('Hey Ash!');
 					window.addEventListener('beforeunload', () => {

@@ -35,7 +35,7 @@ export const AdminFlow = () => {
 			return;
 		}
 
-		const response = await fetch('https://isuxrpuwprutyqgdlmfh.supabase.co/rest/v1/vittaverse', {
+		const response = await fetch('https://uyhpwyrhafadrvtsnwis.supabase.co/rest/v1/Vittaverse', {
 			method: 'POST',
 			headers: headers,
 			body: JSON.stringify({ firm, pass }),
