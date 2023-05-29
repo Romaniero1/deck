@@ -4,13 +4,13 @@ import Image from 'next/image';
 import Logo from '/public/second-flow/logo.svg';
 import { useRef, useState } from 'react';
 import { PopupContact } from './popup-contact';
-import { Onepagers } from './onepagers-card';
-import { Slider } from './slide-card';
+//import { Onepagers } from './onepagers-card';
+import { SliderFirst } from './slide-card';
+import { SliderSecond } from './slide-card-roadmap';
 import Bg from 'public/second-flow/bg.webm';
 import BgSafari from 'public/second-flow/bg.mp4';
 import { PopupDisclaimer } from './popup-disclaimer';
 import { useRouter } from 'next/navigation';
-
 
 export const SecondFlow = () => {
 	const router = useRouter();
@@ -54,14 +54,14 @@ export const SecondFlow = () => {
 						</div>
 					</div>
 					<div className='mt-10 md:mt-[70px] items-center'>
-						<div className='flex items-center flex-col lg:flex-row lg:justify-center lg:items-stretch'>
-							<Slider />
-							<Onepagers />
+						<div className='flex items-center flex-col lg:flex-row lg:justify-center lg:items-stretch space-x-0 lg:space-x-4 space-y-4 lg:space-y-0'>
+							<SliderFirst />
+							<SliderSecond />
 						</div>
 					</div>
 				</div>
 			</header>
-			<footer className='mt-20 md:mt-[180px] border-t-[1px] w-screen border-white pt-2 border-opacity-50'>
+			<footer className='mt-20 md:mt-[180px] border-t-[1px] border-white pt-2 border-opacity-50'>
 				<div className='flex mx-[17px] sm:mx-[33px] xl:mx-[120px] justify-between items-end'>
 					<p>
 						© Vittaverse 2023

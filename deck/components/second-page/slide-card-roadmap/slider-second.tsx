@@ -9,26 +9,18 @@ import { zoomPlugin } from '@react-pdf-viewer/zoom';
 import '@react-pdf-viewer/zoom/lib/styles/index.css';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
 
-import Picture1 from '/public/second-flow/slider/1.jpg';
-import Picture2 from '/public/second-flow/slider/2.jpg';
-import Picture3 from '/public/second-flow/slider/3.jpg';
-import Picture4 from '/public/second-flow/slider/4.jpg';
-import Picture5 from '/public/second-flow/slider/5.jpg';
-import Picture6 from '/public/second-flow/slider/6.jpg';
-import Picture7 from '/public/second-flow/slider/7.jpg';
-import Picture8 from '/public/second-flow/slider/8.jpg';
-import Picture9 from '/public/second-flow/slider/9.jpg';
-import Picture10 from '/public/second-flow/slider/10.jpg';
-import Picture11 from '/public/second-flow/slider/11.jpg';
-import Picture12 from '/public/second-flow/slider/12.jpg';
-import Picture13 from '/public/second-flow/slider/13.jpg';
-import Picture14 from '/public/second-flow/slider/14.jpg';
-import Picture15 from '/public/second-flow/slider/15.jpg';
-import Picture16 from '/public/second-flow/slider/16.jpg';
+import Picture1 from '/public/second-flow/slider-second/1.jpg';
+import Picture2 from '/public/second-flow/slider-second/2.jpg';
+import Picture3 from '/public/second-flow/slider-second/3.jpg';
+import Picture4 from '/public/second-flow/slider-second/4.jpg';
+import Picture5 from '/public/second-flow/slider-second/5.jpg';
+import Picture6 from '/public/second-flow/slider-second/6.jpg';
+import Picture7 from '/public/second-flow/slider-second/7.jpg';
+import Picture8 from '/public/second-flow/slider-second/8.jpg';
 
-export const Slider = () => {
-	const slideImages = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7, Picture8, Picture9, Picture10,
-		Picture11, Picture12, Picture13, Picture14, Picture15, Picture16
+
+export const SliderSecond = () => {
+	const slideImages = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7, Picture8
 	];
 	const buttonStyle = {
 		width: "15px",
@@ -56,11 +48,11 @@ export const Slider = () => {
 	const { DownloadButton } = getFilePluginInstance;
 
 	return (
-		<div className='w-full lg:w-2/3 rounded-[24px} '>
+		<div className='w-full lg:w-1/2 cursor-pointer rounded-[24px}'>
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
 					<div key={index} className="each-slide" onClick={() => setOpen(!open)}>
-						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] border-light lazy' />
+						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] hover:border-[2px] border-light lazy' />
 					</div>
 				))}
 			</Slide>
@@ -101,7 +93,7 @@ export const Slider = () => {
 										overflow: 'hidden',
 									}}
 								>
-									<Viewer fileUrl="Deck.pdf" defaultScale={SpecialZoomLevel.PageFit} plugins={[zoomPluginInstance, getFilePluginInstance]} theme="dark" />
+									<Viewer fileUrl="Roadmap.pdf" defaultScale={SpecialZoomLevel.PageFit} plugins={[zoomPluginInstance, getFilePluginInstance]} theme="dark" />
 								</div>
 							</div>
 						</Worker>

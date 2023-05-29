@@ -114,16 +114,16 @@ export const FirstFlow = () => {
 						<input
 							value={password}
 							onChange={handlePasswordChange}
-							className='w-[280px] sm:w-[380px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
+							className='w-[250px] sm:w-[300px] h-[60px] rounded-[10px] px-5 text-black bg-white bg-no-repeat bg-cover focus:outline-none'
 							placeholder='Enter password'
 						/>
 						<button
 							type='submit'
-							className='btn-primary outline outline-0 w-[280px] sm:w-[380px] h-[60px] mt-2'
+							className='btn-primary outline outline-0 w-[250px] sm:w-[300px] h-[60px] mt-2'
 						>
 							<h4>Let’s start</h4>
 						</button>
-						<div className='flex flex-col items-center sm:flex-row pt-5'>
+						<div className='flex flex-col items-center pt-5'>
 							Don&apos;t have a password?{' '}
 							<div onClick={handleOpenPopup} className='text-green underline ml-1'>
 								Request access
