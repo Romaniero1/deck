@@ -61,7 +61,7 @@ export const SecondFlow = () => {
 					</div>
 				</div>
 			</header>
-			<footer className='mt-20 md:mt-[180px] border-t-[1px] border-white pt-2 border-opacity-50'>
+			<footer className='mt-20 xl:mt-[260px] pt-5 h-20 border-t-[1px] border-white border-opacity-50'>
 				<div className='flex mx-[17px] sm:mx-[33px] xl:mx-[120px] justify-between items-end'>
 					<p>
 						© Vittaverse 2023

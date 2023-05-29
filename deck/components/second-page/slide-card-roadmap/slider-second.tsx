@@ -30,9 +30,9 @@ export const SliderSecond = () => {
 		margin: '10px',
 	};
 	const properties = {
-		duration: 3500,
+		duration: 2500,
 		autoplay: true,
-		transitionDuration: 1200,
+		transitionDuration: 2500,
 		arrows: true,
 		infinite: true,
 		easing: "ease",
