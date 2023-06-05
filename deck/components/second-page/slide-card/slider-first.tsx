@@ -38,7 +38,7 @@ export const SliderFirst = () => {
 		margin: '10px',
 	};
 	const properties = {
-		duration: 2500,
+		duration: 3500,
 		autoplay: true,
 		transitionDuration: 2500,
 		arrows: true,

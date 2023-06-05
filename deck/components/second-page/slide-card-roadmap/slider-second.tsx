@@ -30,7 +30,7 @@ export const SliderSecond = () => {
 		margin: '10px',
 	};
 	const properties = {
-		duration: 2500,
+		duration: 3500,
 		autoplay: true,
 		transitionDuration: 2500,
 		arrows: true,
@@ -52,7 +52,7 @@ export const SliderSecond = () => {
 			<Slide {...properties}>
 				{slideImages.map((each, index) => (
 					<div key={index} className="each-slide" onClick={() => setOpen(!open)}>
-						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] hover:border-[2px] border-light lazy' />
+						<Image src={each} alt="sample" className='rounded-[24px] border-[1px] hover:border-[2px] border-light lazy'  />
 					</div>
 				))}
 			</Slide>
